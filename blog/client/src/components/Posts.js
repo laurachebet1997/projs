@@ -1,0 +1,25 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
+
+
+const Posts = ({_id,title,summary,content,cover,createdAt,author}) => {
+  return (
+    <div className="post">
+      <Link to={`/post/${_id}`}>
+        <img src={"http://localhost:4000/"+cover} alt="no pic given" />         
+      </Link>          
+        <div className="texts">
+            <Link to={`/post/${_id}`}>
+            <h2>{title}</h2>
+            </Link>
+              <p className="info">
+                <a href="author">{author.username}</a>
+                <time className="time">{createdAt}</time>
+              </p>
+              <p className="summary">{summary}</p>
+        </div>
+      </div>
+  )
+}
+
+export default Posts
